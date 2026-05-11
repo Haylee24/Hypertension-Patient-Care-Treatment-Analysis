@@ -27,20 +27,20 @@ The dataset used for this project was a simulated healthcare dataset containing 
 - Time Period: 12 Months
 - Total Records: 3,000 Patient Visit Records
 ### Data Dictionary
-| Column name              | Description                                           | Data Type  |
-|--------------------------|-------------------------------------------------------|------------|
-| patient_id               |                                                       |            |
-| doctor ID                |                                                       |            |
-| patient_visit_id         |                                                       |            |
-| patient_visit Date       |                                                       |            |
-| treatment_cost           |                                                       |            |
-| severity_level           |                                                       |            |
-| treatment_type           |                                                       |            |
-| treatment_success        |                                                       |            |
-| follow-up_required       |                                                       |            |
-| location                 |                                                       |            |
-| patient_age              |                                                       |            |
-| gender                   |                                                       |            | 
+| Column name              | Description                                                              | Data Type  |
+|--------------------------|--------------------------------------------------------------------------|------------|
+| patient_id               | Unique identifier assigned to each patient                               | integer    |
+| doctor_id                | unique identifier assigned to each doctor                                | integer    |
+| patient_visit_id         | unique identifier for each hospital visit                                | integer    |
+| patient_visit Date       | date the patient visited the hospital                                    | date       |
+| treatment_cost           | Total cost of treatment for a patient visit                              | integer    |
+| severity_level           | Indicates the severity of hypertension diagnosis (Mild, Moderate, Severe)| Text       |
+| treatment_type           | Type of treatment administered to the patient                            | Text       |
+| treatment_success        | Indicates whether treatment was successful (Yes/No)                      | Text       |
+| follow-up_required       | Indicates whether follow-up care is required (Yes/No)                    | Text       |
+| location                 | Patient or hospital location/state                                       | Text       |
+| patient_age              | Patient age in years                                                     | Integer    |
+| gender                   | Gender of the patient                                                    | Text       | 
 
 ## Data Transformation & Cleaning 
 The raw dataset was loaded, cleaned and transformed in Power Query before analysis.
@@ -92,7 +92,9 @@ All relationships were configured as:
 ``` Follow-Up Required Rate = DIVIDE(CALCULATE(COUNTROWS(Facts_Visits),Facts_Visits[patient_follow_up_required] = "Yes"), COUNTROWS(Facts_Visits)) ```
 
 ## Dashboard & Visuals 
-Place screenshots of your dashboard here 
+![Overview page](dashboard_overview.png)
+
+![Page 2](dashboard_page2.png)
 #### Dashboard Features
 The dashboard provides:
 - KPI Monitoring
@@ -120,6 +122,7 @@ The dashboard provides:
 
 ## Conclusion 
 This project successfully delivered a healthcare analytics dashboard that provides actionable insights into hypertension patient care and treatment performance using Microsoft Power BI.
+
 The dashboard enables hospital stakeholders to monitor operational performance, evaluate treatment effectiveness, and support better healthcare planning decisions.
 
 
